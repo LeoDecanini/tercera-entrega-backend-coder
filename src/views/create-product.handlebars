@@ -1,0 +1,120 @@
+<main class="main-container">
+  <h1 class="form-title">Crear Producto</h1>
+
+  <form id="productForm" action="/crud/api/products" method="POST">
+    <div class="form-group">
+      <label for="title" class="form-label">Título:</label>
+      <input type="text" id="title" name="title" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label for="thumbnails" class="form-label">URL de las miniaturas
+        (separadas por comas):</label>
+      <input
+        type="text"
+        id="thumbnails"
+        name="thumbnails"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="status" class="form-label">Estado:</label>
+      <select id="status" name="status" class="form-select" required>
+        <option value="true">Activo</option>
+        <option value="false">Inactivo</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="brand" class="form-label">Marca:</label>
+      <input type="text" id="brand" name="brand" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label for="rating" class="form-label">Rating:</label>
+      <input type="text" id="rating" name="rating" class="form-input" />
+    </div>
+
+    <div class="form-group">
+      <label for="color" class="form-label">Color:</label>
+      <input type="text" id="color" name="color" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label for="details" class="form-label">Detalles (separados por comas):</label>
+      <input
+        type="text"
+        id="details"
+        name="details"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="form-label">Descripción (separada por
+        comas):</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="stock" class="form-label">Stock:</label>
+      <input
+        type="number"
+        id="stock"
+        name="stock"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="freeshipping" class="form-label">Envío gratuito:</label>
+      <select
+        id="freeshipping"
+        name="freeshipping"
+        class="form-select"
+        required
+      >
+        <option value="true">Sí</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dues" class="form-label">Plazos de pago (separados por comas):</label>
+      <input type="text" id="dues" name="dues" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <label for="price" class="form-label">Precio:</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="code" class="form-label">Código:</label>
+      <input type="text" id="code" name="code" class="form-input" required />
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="form-button">Crear Producto</button>
+    </div>
+  </form>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

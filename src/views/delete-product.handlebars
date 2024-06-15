@@ -1,0 +1,46 @@
+<main>
+    <h1>{{title}}</h1>
+
+    <div class="card">
+      {{#each products}}
+        <div class="product-card">
+          <div class="product-details">
+            <a href="#">
+              <h5 class="product-title">{{title}}</h5>
+            </a>
+            <p class="product-description">{{ description.[0] }}</p>
+            <button class="delete-btn" data-product-id="{{_id}}">Eliminar Producto</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const deleteButtons = document.querySelectorAll(".delete-btn");
+
+      deleteButtons.forEach(button => {
+        button.addEventListener("click", function() {
+          const productId = this.dataset.productId;
+          if (productId) {
+            fetch(`http://localhost:8082/crud/api/products/${productId}`, {
+              method: "DELETE"
+            })
+            .then(response => {
+              if (response.ok) {
+                console.log("Producto eliminado exitosamente");
+              } else {
+                console.error("Error al eliminar el producto");
+              }
+            })
+            .catch(error => {
+              console.error("Error de red:", error);
+            });
+          } else {
+            console.error("No se encontró el ID del producto");
+          }
+        });
+      });
+    });
+  </script>
